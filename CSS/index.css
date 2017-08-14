@@ -1,0 +1,225 @@
+* {
+    /*清除默认样式*/
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #444;
+    font: 9pt Arial, "微软雅黑";
+    font-family: HELVETICANEUELTPRO-THEX, Arial, "微软雅黑";
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    overflow-x: hidden;
+    background: url("./pictures/bg.jpg") fixed  0 0 /100% 140% no-repeat ;
+}
+
+.content{
+    /*水平居中*/
+    max-width: 100%;
+}
+
+header{
+    height: 84px;
+    background: rgba(250,250,250,.8);
+    transition: all .6s cubic-bezier(.215, .61, .355, 1) 0s;/*变化速率和变化曲线*/
+    position: fixed;
+    z-index: 99;/*最上层*/
+    width: 100%;
+
+}
+.header_content{
+    /*头部内容竖直居中*/
+    padding: 20px 5px 0;
+    height: 64px;
+
+}
+.header_nav{
+
+}
+.header_childnav{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 199;
+    visibility: hidden;
+    overflow: hidden;
+    width: 180px;
+    height: auto;
+    border-top: 2px solid #bbb9bb;
+    background-color: #fff;
+    box-shadow: 0 13px 42px 11px rgba(0, 0, 0, .05);
+    opacity: 0;
+    transition: all .36s ease;
+    line-height: 34px;
+    color: #999999;
+}
+.header_childnavhid{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 199;
+    overflow: hidden;
+    width: 180px;
+    height: auto;
+    border-top: 2px solid #bbb9bb;
+    background-color: #fff;
+    box-shadow: 0 13px 42px 11px rgba(0, 0, 0, .05);
+    opacity: 1;
+    transition: all .36s ease;
+    line-height: 34px;
+    color: #999999;
+}
+nav{
+    float: right;
+    margin-right: 40px;
+    padding-right: 0;
+}
+nav >li{
+    position: relative;
+    float: left;
+    height: 100%;
+    font-size: 16px;
+    list-style: none;
+}
+
+#studio{
+    position: relative;
+    float: left;
+    height: 100%;
+    font-size: 16px;
+    list-style: none;
+}
+#studio >a{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0 20px;
+    height: 44px;
+    color: #999;
+    font-weight: 500;
+    line-height: 44px;
+
+}
+#studio >ul >li:hover{
+    background-color: #f9f9f9;
+}
+nav >li>a{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0 20px;
+    height: 44px;
+    color: #999;
+    font-weight: 500;
+    line-height: 44px;
+}
+
+.mini{
+    height: 4pc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+@keyframes jackInTheBox {
+    from {
+        opacity: 0;
+        transform: scale(0.1) rotate(30deg);
+        transform-origin: center bottom;
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    70% {
+        transform: rotate(3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes bounceInDown {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 25px, 0);
+    }
+
+    75% {
+        transform: translate3d(0, -10px, 0);
+    }
+
+    90% {
+        transform: translate3d(0, 5px, 0);
+    }
+
+    to {
+        transform: none;
+    }
+}
+@keyframes bounceOutDown {
+    20% {
+        transform: translate3d(0, 10px, 0);
+    }
+
+    40%, 45% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, 2000px, 0);
+    }
+}
+@keyframes colorGtoB {
+    0% {
+        color: #999;/*这个动画瞬间完成,把字体颜色改变*/
+    }/*动画开始样式*/
+
+    100% {
+        color: #00c0ff;
+    }/*动画结束样式*/
+}
+@keyframes colorBtoG {
+    0% {
+        color: #00c0ff;/*这个动画瞬间完成,把字体颜色改变*/
+    }/*动画开始样式*/
+
+    100% {
+        color: #999;
+    }/*动画结束样式*/
+}
+
+.bouncein {
+    animation:bounceInDown 1s , colorGtoB 1s forwards;
+    -webkit-animation:bounceInDown 1s,colorGtoB 1s forwards ;
+
+}
+.bounceout{
+    animation:bounceOutDown 1s , colorBtoG 1s forwards;
+    -webkit-animation:bounceOutDown 1s , colorBtoG 1s forwards;
+}
+.jackin{
+    animation: jackInTheBox 1s , colorGtoB 1s forwards;
+    -webkit-animation:jackInTheBox 1s,colorGtoB 1s forwards ;
+}
+.jackout{
+    animation:jackInTheBox 1s , colorBtoG 1s forwards;
+    -webkit-animation:jackInTheBox 1s , colorBtoG 1s forwards;
+
+}
