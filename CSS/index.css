@@ -21,30 +21,35 @@ body, html {
 
 .content{
     /*水平居中*/
-    max-width: 100%;
-}
 
+    max-width: 100%;
+
+}
+/**********导航栏部分*************/
+.header_nav{
+    
+}
 header{
-    height: 84px;
-    background: rgba(250,250,250,.8);
+    height: 79px;
+    background: 0 0;
     transition: all .6s cubic-bezier(.215, .61, .355, 1) 0s;/*变化速率和变化曲线*/
     position: fixed;
     z-index: 99;/*最上层*/
     width: 100%;
 
 }
+
 .header_content{
     /*头部内容竖直居中*/
-    padding: 20px 5px 0;
-    height: 64px;
+   height:100%;
+    padding: 10px 5px 0;
 
 }
-.header_nav{
 
-}
 .header_childnav{
     position: absolute;
     top: 100%;
+    margin-top: -10px;
     left: 0;
     z-index: 199;
     visibility: hidden;
@@ -61,6 +66,7 @@ header{
 }
 .header_childnavhid{
     position: absolute;
+    margin-top: -10px;
     top: 100%;
     left: 0;
     z-index: 199;
@@ -72,6 +78,7 @@ header{
     box-shadow: 0 13px 42px 11px rgba(0, 0, 0, .05);
     opacity: 1;
     transition: all .36s ease;
+    padding-left: 5px;
     line-height: 34px;
     color: #999999;
 }
@@ -83,6 +90,7 @@ nav{
 nav >li{
     position: relative;
     float: left;
+
     height: 100%;
     font-size: 16px;
     list-style: none;
@@ -122,6 +130,7 @@ nav >li>a{
 
 .mini{
     height: 4pc;
+    background-color: #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 }
 @keyframes jackInTheBox {
@@ -144,53 +153,114 @@ nav >li>a{
         transform: scale(1);
     }
 }
-@keyframes bounceInDown {
-    from, 60%, 75%, 90%, to {
-        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+@-webkit-keyframes rubberBand {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 
-    0% {
-        opacity: 0;
-        transform: translate3d(0, -3000px, 0);
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
     }
 
-    60% {
-        opacity: 1;
-        transform: translate3d(0, 25px, 0);
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+        transform: scale3d(.95, 1.05, 1);
     }
 
     75% {
-        transform: translate3d(0, -10px, 0);
-    }
-
-    90% {
-        transform: translate3d(0, 5px, 0);
+        -webkit-transform: scale3d(1.05, .95, 1);
+        transform: scale3d(1.05, .95, 1);
     }
 
     to {
-        transform: none;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 }
-@keyframes bounceOutDown {
-    20% {
-        transform: translate3d(0, 10px, 0);
+
+@keyframes rubberBand {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 
-    40%, 45% {
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+        transform: scale3d(.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+        transform: scale3d(1.05, .95, 1);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@-webkit-keyframes flash {
+    from, 50%, to {
         opacity: 1;
-        transform: translate3d(0, -20px, 0);
     }
 
-    to {
+    25%, 75% {
         opacity: 0;
-        transform: translate3d(0, 2000px, 0);
     }
 }
+
+@keyframes flash {
+    from, 50%, to {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+
 @keyframes colorGtoB {
     0% {
         color: #999;/*这个动画瞬间完成,把字体颜色改变*/
     }/*动画开始样式*/
-
+    25%{
+        color: #e3f2fd;
+    }
+    50%{
+        color: #b3e5fc;
+    }
+    75%{
+        color: #81d4fa;
+    }
     100% {
         color: #00c0ff;
     }/*动画结束样式*/
@@ -199,20 +269,30 @@ nav >li>a{
     0% {
         color: #00c0ff;/*这个动画瞬间完成,把字体颜色改变*/
     }/*动画开始样式*/
+    25%{
+        color: #81d4fa;
+    }
+    50%{
+        color: #b3e5fc;
+    }
+    75%{
 
+        color: #e3f2fd;
+    }
     100% {
         color: #999;
     }/*动画结束样式*/
 }
 
 .bouncein {
-    animation:bounceInDown 1s , colorGtoB 1s forwards;
-    -webkit-animation:bounceInDown 1s,colorGtoB 1s forwards ;
+    animation:rubberBand 1s , colorGtoB 1s forwards;
+    -webkit-animation:rubberBand 1s,colorGtoB 1s forwards ;
+
 
 }
 .bounceout{
-    animation:bounceOutDown 1s , colorBtoG 1s forwards;
-    -webkit-animation:bounceOutDown 1s , colorBtoG 1s forwards;
+    animation:flash 1s , colorBtoG 1s forwards;
+    -webkit-animation:flash 1s , colorBtoG 1s forwards;
 }
 .jackin{
     animation: jackInTheBox 1s , colorGtoB 1s forwards;
@@ -223,3 +303,74 @@ nav >li>a{
     -webkit-animation:jackInTheBox 1s , colorBtoG 1s forwards;
 
 }
+
+/************轮播部分************/
+.lunbo_z{
+    z-index: 1;
+    position: fixed;
+}
+.lunbo_img{
+    width: 100%;
+    height: 100%;
+}
+.shuffling_ndr{
+    background-color: #a0a;
+}
+.shuffling_studio{
+    background-color: chartreuse;
+}
+.shuffling_daiding{
+    background-color: yellow;
+}
+/*********滚动视差*************/
+.num_bar{
+    width: 100%;
+    height: 208px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+.scroll_parallax_gb{
+    width: 100%;
+    position: absolute;
+    height: 582px;
+    background: url("./pictures/scool_bg.jpg");
+    background-position-y: 784px;
+    padding-top: 91px;
+    padding-left: 10%;
+
+}
+
+/***********数字栏************/
+.num_content{
+
+}
+
+.main{
+    z-index: 50;
+    width: 100%;
+    height: 2000px;
+    position: absolute;
+    top:500px;
+    background-color: #ffffff;
+}
+/*****又一个滚动视差*****/
+
+
+.article{
+    width: 960px;
+    margin: 0 auto;
+    height: 800px;
+    padding: 40px;
+    font: 18px/1.5 'Microsoft YaHei';
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.section1{
+    background-image: url("lunbo_1.jpg");
+}
+
+/***************/

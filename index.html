@@ -10,14 +10,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <script type="text/javascript" src="./Scripts/jquery-3.2.1.slim.min.js"></script>
     <script type="text/javascript" src="./Scripts/index.js"></script>
+    <!--数据可视化-->
+    <script type="text/javascript"src="./Scripts/d3.min.js"></script>
     <!--图标库-->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--轮播框架-->
+    <link href="CSS/swiper-3.4.2.min.css" rel="stylesheet">
+
+    <l
+
     <link rel="stylesheet" type="text/css" href="./CSS/index.css">
 
     <title>大连东软信息学院网络安全工作室</title>
 
 </head>
 <body>
+<script type="text/javascript" src="./Scripts/swiper-3.4.2.jquery.min.js"></script>
 <header>
     <div class="header_content">
         <div class="content">
@@ -41,10 +49,10 @@
                     <i class="fa fa-angle-down fa-lg"></i>
                 </a>
                 <ul id="header_childnav_stdio" class="header_childnav">
-                    <li>编程组</li>
-                    <li>渗透组</li>
-                    <li>运维组</li>
-                    <li>前端组</li>
+                    <li>主要方向</li>
+                    <li>纳新报名</li>
+                    <li>关于我们</li>
+
                 </ul>
             </div>
             <li>
@@ -57,9 +65,7 @@
             <li>
                 <a >NIS镜像仓库</a>
             </li>
-            <li>
-                <a >联系方式</a>
-            </li>
+
             <li>
                 <a >GIT</a>
             </li>
@@ -68,8 +74,75 @@
             </li>
         </nav>
     </div>
-
 </header>
 
+<div class="swiper-container lunbo_z">
+    <div class="swiper-wrapper " >
+        <div class="swiper-slide shuffling_ndr"><img src="CSS/pictures/lunbo_1.jpg" class="lunbo_img"></div>
+        <div class="swiper-slide shuffling_studio"><img src="CSS/pictures/lunbo_2.jpg" class="lunbo_img"></div>
+        <div class="swiper-slide shuffling_daiding"><img src="CSS/pictures/lunbo_3.jpg" class="lunbo_img"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+<div class="main">
+    <div class="num_bar">
+        <div class="num_content">
+
+        </div>
+
+    </div>
+    <div class="scroll_parallax_gb">
+        <img src="images/slider01.png">
+    </div>
+    <div class="scroll_parallax_fa">
+        <img src="images/slider01.png">
+    </div>
+
+
+    <div class="article section1">
+
+    </div>
+    <div class="article section2">
+        <div class="title">
+            章节·二  我会想起那天夕阳下的奔跑
+        </div>
+        <div class="content">
+            我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+            我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+            我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+        </div>
+    </div>
+    <div class="article section3">
+        <div class="title">
+            章节·三  那是我逝去的，青春
+        </div>
+        <div class="content">
+            我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+            我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+            我是内容我是内容我是内容我是内容我是内容我喜欢你我是内容我是内容
+        </div>
+    </div>
+    <div class="article section3">
+        <div class="title">
+            章节·四  那是我逝去的，青春
+        </div>
+        <div class="content">
+            我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+            我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+            我是内容我是内容我是内容我是内容我是内容我喜欢你我是内容我是内容
+        </div>
+    </div>
+
+
+</div>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 5000,//可选选项，自动滑动
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+    })
+</script>
 </body>
+
 </html>
