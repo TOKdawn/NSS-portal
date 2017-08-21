@@ -1,10 +1,18 @@
+/*****引入字体********/
+@font-face {
+    font-family: shouxie; /*这里是说明调用来的字体名字*/
+    src: url('./font/wawa.otf');
+}
+
+
+
 * {
     /*清除默认样式*/
     margin: 0;
     padding: 0;
 }
 body, html {
-    width: 100%;
+    min-width: 1330px;
     height: 100%;
     background: #fff;
     color: #444;
@@ -16,7 +24,7 @@ body, html {
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
     overflow-x: hidden;
-    background: url("./pictures/bg.jpg") fixed  0 0 /100% 140% no-repeat ;
+    background:  fixed  0 0 /100% 140% no-repeat ;
 }
 
 .content{
@@ -26,6 +34,9 @@ body, html {
 
 }
 /**********导航栏部分*************/
+
+
+
 .header_nav{
     
 }
@@ -42,6 +53,7 @@ header{
 .header_content{
     /*头部内容竖直居中*/
    height:100%;
+    min-width: 1330px;
     padding: 10px 5px 0;
 
 }
@@ -129,7 +141,7 @@ nav >li>a{
 }
 
 .mini{
-    height: 4pc;
+    height: 64px;
     background-color: #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 }
@@ -284,21 +296,21 @@ nav >li>a{
     }/*动画结束样式*/
 }
 
-.bouncein {
+.zbouncein {
     animation:rubberBand 1s , colorGtoB 1s forwards;
     -webkit-animation:rubberBand 1s,colorGtoB 1s forwards ;
 
 
 }
-.bounceout{
+.zbounceout{
     animation:flash 1s , colorBtoG 1s forwards;
     -webkit-animation:flash 1s , colorBtoG 1s forwards;
 }
-.jackin{
+.zjackin{
     animation: jackInTheBox 1s , colorGtoB 1s forwards;
     -webkit-animation:jackInTheBox 1s,colorGtoB 1s forwards ;
 }
-.jackout{
+.zjackout{
     animation:jackInTheBox 1s , colorBtoG 1s forwards;
     -webkit-animation:jackInTheBox 1s , colorBtoG 1s forwards;
 
@@ -307,20 +319,29 @@ nav >li>a{
 /************轮播部分************/
 .lunbo_z{
     z-index: 1;
+    width: 100%;
+    height: 100%;
     position: fixed;
 }
 .lunbo_img{
-    width: 100%;
-    height: 100%;
+    width: inherit;
+    height: inherit;
 }
 .shuffling_ndr{
-    background-color: #a0a;
+    width: 100%;
+    height: 100%;
+
+    /*background:url("./pictures/lunbo_1.jpg") 0 0/100% 100% no-repeat fixed;*/
 }
 .shuffling_studio{
-    background-color: chartreuse;
+    width: 100%;
+    height: 100%;
+    /*background:url("./pictures/lunbo_2.jpg") 0 0/100% 100% no-repeat fixed;*/
 }
 .shuffling_daiding{
-    background-color: yellow;
+    width: 100%;
+    height: 100%;
+    /*background:url("./pictures/lunbo_1.jpg") 0 0/100% 100% no-repeat fixed;*/
 }
 /*********滚动视差*************/
 .num_bar{
@@ -332,10 +353,11 @@ nav >li>a{
 }
 .scroll_parallax_gb{
     width: 100%;
-    position: absolute;
+    /*position: absolute;*/
     height: 582px;
-    background: url("./pictures/scool_bg.jpg");
-    background-position-y: 784px;
+    background-image: url("./pictures/scool_bg.jpg");
+    background-position: 0px -400px;
+
     padding-top: 91px;
     padding-left: 10%;
 
@@ -358,19 +380,191 @@ nav >li>a{
 
 
 .article{
-    width: 960px;
+    padding-top: 100px;
     margin: 0 auto;
-    height: 800px;
-    padding: 40px;
     font: 18px/1.5 'Microsoft YaHei';
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-    background-size: cover;
+    /*background-size: cover;*/
+    background-position: center;
+    background-size: 100% 100%;
+
+    box-shadow: 0 125px 100px -100px rgba(0, 0, 0, 0.5) inset;
+
+}
+/*.mengban{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*opacity: .8;*/
+    /*background-color: #000000;*/
+/*}*/
+.biancheng{
+    background-image:   url("./pictures/slide1bg.jpg")  ;
+}
+.shentou{
+    background-image:   url("./pictures/slide2bg.jpg")  ;
+}
+.yunwei{
+    background-image:   url("./pictures/slide3bg.jpg")  ;
+}
+.qianduan{
+    background-image:   url("./pictures/slide4bg.jpg")  ;
+}
+.xingzheng{
+    background-image:   url("./pictures/slide5bg.jpg")  ;
 }
 
-.section1{
-    background-image: url("lunbo_1.jpg");
+
+/*******关于********/
+
+.about_title{
+    width: 100%;
+    align-content: center;
+    line-height: 150px;
+    font-size: 40px;
+    margin-top: 10px;
+    padding-left: 43%;
+
 }
 
-/***************/
+.about_text{
+    height: 300px;
+    width: 70%;
+    align-content: center;
+    line-height: 26px;
+    padding-left: 15%;
+    font-size: 20px;
+    color: #999;
+}
+/********方向介绍*******/
+.zpybeating{
+    -webkit-transition: .5s cubic-bezier(1,-1,0,2);
+    transition: .5s cubic-bezier(1,-1,0,2);
+    -webkit-clip-path:circle(8em at 10em 10em);/*圆半径,圆x坐标,圆y坐标*/
+    clip-path:circle(5em at 10em 10em);
+
+}
+.zpybeating:hover{
+    -webkit-clip-path:circle(9em at 10em 10em);/*圆半径,圆x坐标,圆y坐标*/
+    clip-path:circle(9em at 10em 10em);
+}
+.direction_title{
+
+    width: 100%;
+    font-size: 58px;
+    font-family: shouxie;
+    margin-left: 40.4%;
+    font-weight: normal;
+    color: #ffffff;
+}
+.direction_text{
+    margin-top: 50px;
+    height: 300px;
+    width: 70%;
+    align-content: center;
+    line-height: 37px;
+    padding-left: 15%;
+    font-size: 35px;
+    color:  #fff;
+    font-family: shouxie;
+}
+.row-fluid{
+
+    min-width: 1330px;
+}
+.circle-border {
+    display: inline-block;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    border-radius: 500px;
+    -khtml-border-radius: 500px;
+    border: 3px solid #fff;
+}
+
+.zoom-in {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+.zoom-in:hover {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+}
+.img-circle {
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    border-radius: 500px;
+}
+h3{
+    margin-top: 3px;
+}
+.span3{
+    width: 24.7%;
+    color: #fff;
+    display: inline-block;
+}
+.service{
+    margin-top:20px;
+}
+.service, .service h2 {
+    padding-top:15px;
+}
+.service p {
+    padding:0px 50px;
+    height:60px;
+}
+.service img {
+    width:150px;
+    height:150px;
+}
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+}
+/*.about{*/
+    /*width: 100%;*/
+    /*height: 800px;*/
+    /*background-color: #ffffff;*/
+/*}*/
+
+ /*.con::before {*/
+    /*background: url("./pictures/lunbo_2.jpg") 0 / cover fixed;*/
+/*}*/
+
+/*.con{*/
+    /*position: relative;*/
+    /*margin: 0 auto;*/
+    /*padding: 1em;*/
+    /*max-width: 23em;*/
+    /*background: hsla(0,0%,100%,.25) border-box;*/
+    /*overflow: hidden;*/
+    /*border-radius: .3em;*/
+    /*box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,*/
+    /*0 .5em 1em rgba(0, 0, 0, 0.6);*/
+    /*text-shadow: 0 1px 1px hsla(0,0%,100%,.3);*/
+    /*word-wrap: break-word;*/
+
+/*}*/
+/*.con:before{*/
+    /*content: ' ';*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*filter: blur(20px);*/
+    /*margin: -30px;*/
+    /*z-index: -1;*/
+
+/*}*/
