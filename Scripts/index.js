@@ -30,17 +30,17 @@ $(document).ready(function(){
 
     $(window).resize(function () {          //当浏览器大小变化时
         var win_h=document.body.clientHeight;
-       // console.log(win_h);
+
         var win_w=document.body.clientWidth;
         if(win_w<=1330){
-            console.log("aaaaa");
+            //console.log("aaaaa");
             win_w=1330;
         }
+        console.log(win_h);
         $('.lunbo_z').css("height",win_h).css("width",win_w);
         $('.main').css("top",win_h);
         $('.article').css("height",win_h-60).css("width",win_w);
-        $('.lunbo_img').css("height",win_h).css("width",win_w);
-
+        $('.lunbo_img').css("height",win_h).css("width",win_w)
     });
 
 

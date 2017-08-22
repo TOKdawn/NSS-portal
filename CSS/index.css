@@ -5,7 +5,10 @@
 }
 
 
-
+a{
+    text-decoration:none;
+    color: #333;
+}
 * {
     /*清除默认样式*/
     margin: 0;
@@ -417,14 +420,18 @@ nav >li>a{
 
 
 /*******关于********/
+.about{
+    min-width: 1330px;
+}
 
 .about_title{
     width: 100%;
     align-content: center;
     line-height: 150px;
     font-size: 40px;
-    margin-top: 10px;
-    padding-left: 43%;
+    margin-top: 0px;
+    padding-top: 40px;
+    padding-left: 45.5%;
 
 }
 
@@ -433,7 +440,7 @@ nav >li>a{
     width: 70%;
     align-content: center;
     line-height: 26px;
-    padding-left: 15%;
+    padding-left: 16%;
     font-size: 20px;
     color: #999;
 }
@@ -454,7 +461,7 @@ nav >li>a{
     width: 100%;
     font-size: 58px;
     font-family: shouxie;
-    margin-left: 40.4%;
+    margin-left: 42.4%;
     font-weight: normal;
     color: #ffffff;
 }
@@ -464,7 +471,7 @@ nav >li>a{
     width: 70%;
     align-content: center;
     line-height: 37px;
-    padding-left: 15%;
+    padding-left: 16%;
     font-size: 35px;
     color:  #fff;
     font-family: shouxie;
@@ -532,6 +539,108 @@ h3{
     float: none;
     text-align: center;
 }
+
+
+
+
+
+/*******联系我们********/
+
+@keyframes wave {
+    0% { background-position: 0px 0px; }
+    50% { background-position: 192px 0px; }
+    100% { background-position: 385px 0px;  }
+}
+
+.wave1 {
+    height: 80px;
+    nim-width:1330px ;
+    background:url("./pictures/wave2.png");
+    animation: wave 4s linear infinite;
+    margin-top: -80px;
+}
+.wave2 {
+    height: 80px;
+    nim-width:1330px ;
+    background:url("./pictures/wave1.png");
+    animation: wave 7s linear infinite;
+    margin-top: -80px;
+}
+
+.call_me{
+    background: #fff;
+    background-size:110px 200px;
+    height: 200px;
+    min-width: 1330px;
+}
+
+
+.span4{
+    width: 33%;
+    display: inline-block;
+}
+.testimonial p {
+    color:#181A1C;
+    background:#00c0ff;
+    padding:15px;
+    margin:0;
+}
+.testimonial .arrow {
+    margin-left:10px;
+    width:0;
+    border-top:10px solid #00c0ff;
+    border-left: 20px outset transparent;
+    border-right: 20px outset transparent;
+}
+.testimonial .whopic {
+    display:inline-block;
+}
+.testimonial .whopic img {
+    margin-top:10px;
+    width:50px;
+    height:50px;
+    float:left;
+}
+.testimonial .whopic strong {
+    float:left;
+    margin-top:10px;
+    padding-left:10px;
+}
+.testimonial .whopic small {
+    display:block;
+    font-size:12px;
+
+}
+.testimonial-text{
+    display:block;
+    font-size:22px;
+    text-align:center;
+    margin:0 auto;
+    margin-top:30px;
+    width:70%;
+    line-height:1.3em;
+}
+.row{
+    width: 90%;
+    padding-left: 5%;
+    font-size: 20px;
+}
+
+
+
+
+.information{
+    min-width: 1330px;
+    background-color: #f6f6f6;
+    color: #999999;
+    text-align: center;
+    line-height: 15px;
+    padding-top: 3px;
+}
+.information a{
+    color: #99b9bb;
+}
+/*
 /*.about{*/
     /*width: 100%;*/
     /*height: 800px;*/
