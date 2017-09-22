@@ -405,7 +405,7 @@ nav>li>a {
 /*****又一个滚动视差*****/
 
 .article {
-    padding-top: 100px;
+    padding-top: 30px;
     margin: 0 auto;
     font: 18px/1.5 'Microsoft YaHei';
     background-repeat: no-repeat;
@@ -509,8 +509,8 @@ nav>li>a {
 }
 
 .direction_text {
-    margin-top: 50px;
-    height: 300px;
+    margin-top: 20px;
+    height: 220px;
     width: 70%;
     align-content: center;
     line-height: 37px;
